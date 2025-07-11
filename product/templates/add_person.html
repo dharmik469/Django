@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Name</title>
+</head>
+<body>
+    <h2>Add a New Name</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Enter name..." required>
+        <button type="submit">Save</button>
+    </form>
+    <br><a href="/">Back to Search</a>
+</body>
+</html>

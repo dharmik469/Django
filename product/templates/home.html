@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Name Suggestion</title>
+    <style>
+        #suggestions { border: 1px solid #ccc; max-width: 300px; background: #f9f9f9; }
+        #suggestions div { padding: 5px; cursor: pointer; }
+        #suggestions div:hover { background: #eee; }
+    </style>
+</head>
+<body>
+    <h2>Search Name</h2>
+    <input type="text" id="name-input" placeholder="Type name...">
+    <div id="suggestions"></div>
+
+    <br><a href="/add/">Add New Name</a>
+
+    <script>
+        const input = document.getElementById("name-input");
+        const box = document.getElementById("suggestions");
+
+        input.addEventListener("input", function() {
+            const query = this.value;
+            if (query.length > 0) {
+                fetch(`/suggest-names/?term=${query}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        box.innerHTML = '';
+                        data.forEach(name => {
+                            const div = document.createElement("div");
+                            div.textContent = name;
+                            div.onclick = () => {
+                                input.value = name;
+                                box.innerHTML = '';
+                            };
+                            box.appendChild(div);
+                        });
+                    });
+            } else {
+                box.innerHTML = '';
+            }
+        });
+    </script>
+</body>
+</html>

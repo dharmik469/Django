@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="main w-75 mx-auto">
+        <p>{{request.session.name}}</p>
+        <p>{{ username }}</p>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Sr. No</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ctr in register %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{ctr.first_name}}</td>
+                    <td>{{ctr.last_name}}</td>
+                    <td>{{ctr.username}}</td>
+                    <td>{{ctr.password}}</td>
+                    <td>
+                        <a href="{% url 'edit' ctr.id %}" class="btn btn-success">Edit</a>
+                        <a href="{% url 'delete' ctr.id %}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>  
+    
+    <a href="/logout">Logout</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+
+</body>
+</html>

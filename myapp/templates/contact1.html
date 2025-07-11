@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            -height: 50px;
+            background-color: aqua;
+            display: flex;
+            justify-content: space-between;
+        }
+        .logo{
+            padding: 10px;
+        }
+        .header ul{
+            list-style: none;
+            padding: 18px;
+            margin-right: 25px;
+            display: flex;
+        }
+        .header li{
+            padding-left: 50px;
+        }
+        .header a{
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+        }
+        .header a:hover{
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-decoration: underline;
+        }
+        img{
+            filter: grayscale(100%);
+        }
+        img:hover{
+            filter: grayscale(0%);
+            transition: filter 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>THis is Contact Page</h1>
+
+
+    <a href="/home">
+        Home
+    </a>
+    |
+    <a href="/about1">
+        About
+    </a>
+</body>
+</html>

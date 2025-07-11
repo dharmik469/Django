@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            -height: 50px;
+            background-color: aqua;
+            display: flex;
+            justify-content: space-between;
+        }
+        .logo{
+            padding: 10px;
+        }
+        .header ul{
+            list-style: none;
+            padding: 18px;
+            margin-right: 25px;
+            display: flex;
+        }
+        .header li{
+            padding-left: 50px;
+        }
+        .header a{
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+        }
+        .header a:hover{
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-decoration: underline;
+        }
+        .main{
+            margin: 2% auto;
+            border: 1px solid black;
+            max-width: 400px;
+            border-radius: 5px;
+            padding: 15px;
+            -background-image: url(Neeulm_Valley_AJK_\(Arang_Kel\).jpg);
+        }
+        .main label{
+            display: block;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .main input{
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .main input:focus{
+            outline: 1px solid rgb(255, 0, 0);
+        }
+        .a{
+            margin: 20px;
+            text-align: right;
+        }
+        .a a{
+            text-decoration: none;
+            color: black;
+        }
+        .main button{
+            margin: auto;
+            background-color: powderblue;
+            padding: 15px;
+            width: 100%;
+            border-radius: 8px;
+            border: 0;
+            box-shadow: 0 4px 8px rgba(00, 0, 0, 0.2);
+            font-size: 15px;
+        }
+        .main button:hover{
+            box-shadow: 0 6px 12px rgba(00, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo"><h1>logo!</h1></div>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+    </div>
+    <div class="main">
+        <form action="">
+            <center><h1>Login</h1></center>
+            <label for="">Username</label>
+            <input type="text" name="" id="" placeholder="Enter username">
+            <label for="">Email</label>
+            <input type="email" name="" placeholder="Enter email" required id="">
+            <label for="">Password</label>
+            <input type="password" name="" placeholder="Enter password" id="">
+            <div class="a">
+                <a href="#">Forgot password?</a>
+            </div>
+            <button>Submit</button>
+        </form>
+    </div>
+</body>
+</html>

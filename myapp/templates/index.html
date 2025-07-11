@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            -height: 50px;
+            background-color: aqua;
+            display: flex;
+            justify-content: space-between;
+        }
+        .logo{
+            padding: 10px;
+        }
+        .header ul{
+            list-style: none;
+            padding: 18px;
+            margin-right: 25px;
+            display: flex;
+        }
+        .header li{
+            padding-left: 50px;
+        }
+        .header a{
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+        }
+        .header a:hover{
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-decoration: underline;
+        }
+        img{
+            filter: grayscale(100%);
+        }
+        img:hover{
+            filter: grayscale(0%);
+            transition: filter 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo"><h1>logo!</h1></div>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+    </div>
+
+    <!-- {{peoples}} -->
+
+    <a href="/about1">
+        About
+    </a>
+    |
+    <a href="/contact1">
+        Contact
+    </a>
+
+    <table border="1", cellspacing="0">
+        <tr>
+            <th>Sr.No</th>
+            <th>Name</th>
+            <th>age</th>
+            <th>can vote</th>
+        </tr>
+        {% for people in peoples %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{people.name}}</td>
+            <td>{{people.age}}</td>
+            <td {%if people.age < 18 %} style="background: red;" {%else%} style="background: green;" {%endif%}>
+                {% if people.age >= 18 %}
+                👍
+                {% else %}
+                👎
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p>
+        {%if "cucumber" in vegetables%}
+            yes available
+        {%elif "Tomato" in vegetables%}
+            yes available
+        {%else%}
+            not available
+        {%endif%}
+    </p>
+
+
+
+</body>
+</html>
