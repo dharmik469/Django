@@ -38,10 +38,14 @@
         }
         img{
             filter: grayscale(100%);
+            transition: 0.5s ease;
+            border-radius: 7px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         img:hover{
             filter: grayscale(0%);
-            transition: filter 0.5s ease-in-out;
+            transform: translateY(-15px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
@@ -51,10 +55,11 @@
     <a href="/home">
         Home
     </a>
-    |
     <a href="/contact1">
         Contact
     </a>
+    <img src="https://i.pinimg.com/736x/e3/ea/cd/e3eacd9e3878ea96db8b104512ebe02b.jpg" width="250px" alt="">
+
 
 </body>
 </html>
