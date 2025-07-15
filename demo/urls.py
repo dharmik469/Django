@@ -60,6 +60,12 @@ urlpatterns = [
     path('', home, name='home'),
     path('suggest-names/', suggest_names, name='suggest-names'),
     path('add/', add_person, name='add-person'),
+    path('set/',set),
+    path('session/',session),
+    path('get/',get),
+    path('sdsd/', sdsd, name='home'),
+    path('profile/', profile, name='profile'),
+    path('logout_view/', logout_view, name='logout'),
 
 ]
 

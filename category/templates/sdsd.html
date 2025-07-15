@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Session Home</title>
+</head>
+<body>
+    <h1>Session Set Successfully!</h1>
+    <p>Welcome, {{ request.session.username }}</p>
+    <a href="{% url 'profile' %}">Go to Profile</a><br>
+    <a href="{% url 'logout' %}">Logout</a>
+</body>
+</html>

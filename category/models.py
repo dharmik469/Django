@@ -14,3 +14,7 @@ class Email(models.Model):
     contact = models.IntegerField()
     message = models.TextField()
     create_at = models.DateTimeField(auto_now_add=True)
+
+class Login(models.Model):
+    username = models.CharField(max_length=200)
+    password = models.CharField(max_length=10)

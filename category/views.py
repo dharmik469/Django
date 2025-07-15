@@ -128,3 +128,54 @@ def mail(request):
 def logout(request):
     request.session.flush()
     return render(request, 'dd.html')
+
+
+from category.models import Login
+
+
+
+def session(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        Login.objects.create(
+            username = username,
+            password = password
+        )
+
+        return redirect('/home')
+    return render(request, 'session.html')
+
+def set(request):
+    return render(request, 'home.html')
+
+def get(request):
+    if request.method == 'POST':
+
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user1 = Login.objects.filter(username=username).first()
+
+        if user1 is not None:
+            request.session['name']='Demo'
+        return redirect('/home')
+    return render(request, 'get.html')
+
+
+from django.shortcuts import render, redirect
+
+def sdsd(request):
+    # Set session
+    request.session['username'] = 'dharmik'
+    return render(request, 'sdsd.html')
+
+def profile(request):
+    # Get session
+    username = request.session.get('username')
+    return render(request, 'profile.html', {'user': username})
+
+def logout_view(request):
+    # Delete session
+    request.session.flush()
+    return redirect('/sdsd')
