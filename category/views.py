@@ -167,8 +167,8 @@ from django.shortcuts import render, redirect
 
 def sdsd(request):
     # Set session
-    request.session['username'] = 'dharmik'
-    return render(request, 'sdsd.html')
+    request.session['username'] = 'Dharmik'
+    return render(request, 'sdsdd.html')
 
 def profile(request):
     # Get session
